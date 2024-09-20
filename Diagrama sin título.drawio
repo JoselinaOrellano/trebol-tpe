@@ -11,7 +11,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="NeBqDJWon9_bztJJe4vq-5" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="460" y="170" width="250" height="220" as="geometry" />
+          <mxGeometry x="470" y="170" width="250" height="220" as="geometry" />
         </mxCell>
         <mxCell id="C-vyLk0tnHw3VtMMgP7b-2" value="producto" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;strokeColor=#67AB9F;" parent="NeBqDJWon9_bztJJe4vq-5" vertex="1">
           <mxGeometry width="250" height="220" as="geometry" />
@@ -70,6 +70,12 @@
             <mxRectangle width="220" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="NeBqDJWon9_bztJJe4vq-7" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#67AB9F;" edge="1" parent="NeBqDJWon9_bztJJe4vq-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="30" y="220" as="sourcePoint" />
+            <mxPoint x="30" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="NeBqDJWon9_bztJJe4vq-6" value="" style="group" vertex="1" connectable="0" parent="1">
           <mxGeometry x="120" y="120" width="250" height="120" as="geometry" />
         </mxCell>
@@ -113,6 +119,12 @@
         <mxCell id="7PMXnccNGzgnaiqE7r-L-3" value="proveedor: int(11)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="7PMXnccNGzgnaiqE7r-L-1" vertex="1">
           <mxGeometry x="30" width="220" height="30" as="geometry">
             <mxRectangle width="220" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NeBqDJWon9_bztJJe4vq-9" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#CC6600;" edge="1" parent="NeBqDJWon9_bztJJe4vq-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="30" y="120" as="sourcePoint" />
+            <mxPoint x="30" y="80" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
