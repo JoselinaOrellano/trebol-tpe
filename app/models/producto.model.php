@@ -15,8 +15,6 @@ class ProductoModel{
             die($th);
         }
         return $pdo;
-
-
     }
 }
 
