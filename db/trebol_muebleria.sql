@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-09-2024 a las 20:15:12
+-- Tiempo de generación: 27-09-2024 a las 00:27:18
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -33,6 +33,16 @@ CREATE TABLE `material` (
   `proveedor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `material`
+--
+
+INSERT INTO `material` (`id_material`, `nombre`, `proveedor`) VALUES
+(1, 'pino', 1),
+(2, 'melamina', 1),
+(5, 'chenille', 2),
+(6, 'algarrobo', 3);
+
 -- --------------------------------------------------------
 
 --
@@ -47,6 +57,16 @@ CREATE TABLE `producto` (
   `imagen` varchar(200) NOT NULL,
   `id_material` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`id_producto`, `nombre`, `precio`, `descripcion`, `imagen`, `id_material`) VALUES
+(3, 'mesa de 6 lugares', 200981, 'mesa de algarrobo de 180x160 mts.', 'img/mesa1.jfif', 6),
+(4, 'sillón de 2 cuerpos', 106985, 'sillón de 2 cuerpos forrado con chenille gris, totalmente lavable.', 'img/sillon1.jfif', 5),
+(5, 'silla de pino', 50000, 'silla de pino reforzada por unidad', 'img/silla1.jfif', 1),
+(6, 'mesa de tv', 402970, 'mesa de tv hecha en melamina', 'img/mesatv.jfif', 2);
 
 --
 -- Índices para tablas volcadas
@@ -73,13 +93,13 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT de la tabla `material`
 --
 ALTER TABLE `material`
-  MODIFY `id_material` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_material` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restricciones para tablas volcadas
