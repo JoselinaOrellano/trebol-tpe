@@ -31,6 +31,15 @@ switch ($params[0]) {
     case 'contacto':
         // PREGUNTAR COMO DIRECCIONAR ???? 
         break;
+    case 'ingresar':
+        $controller = new UsuarioController();
+        $controller->ingresar();     
+        break;
+    case 'registrarse':
+        $controller = new UsuarioController();
+        $controller->registrarse();     
+        break;
+
     default:
         echo "404 not found";
         break;

@@ -16,6 +16,18 @@ class ProductoModel{
         }
         return $pdo;
     }
+
+    public function getProductos(){
+        $pdo = $this->crearConexion();
+
+        $sql = "select * from productos ";
+        $query = $pdo->prepare($sql);
+        $query->execute();
+    
+        $productos = $query->fetchAll(PDO::FETCH_OBJ);
+    
+        return $productos;
+    }
 }
 
 ?>
