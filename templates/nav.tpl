@@ -18,10 +18,11 @@
                   Materiales
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Pino</a></li>
-                  <li><a class="dropdown-item" href="#">Melamina</a></li>
-                  <li><a class="dropdown-item" href="#">Algarrobo</a></li>
-                  <li><a class="dropdown-item" href="#">Chenille</a></li>                  
+                  <li>
+                    {foreach from=$materiales item=$material}
+                      <a class="dropdown-item" href="{$material->id_material}"> {$material->nombre} </a>
+                    {/foreach}
+                  </li>
                 </ul>
               </li>
               <li class="nav-item">

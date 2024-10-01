@@ -1,6 +1,7 @@
 <?php
 
 require_once 'app/controllers/producto.controller.php';
+require_once 'app/controllers/material.controller.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -39,7 +40,10 @@ switch ($params[0]) {
         $controller = new UsuarioController();
         $controller->registrarse();     
         break;
-
+    case 'materiales':
+        $controller = new MaterialController();
+        $controller->mostrarMateriales();
+        break;
     default:
         echo "404 not found";
         break;

@@ -1,5 +1,6 @@
 {include 'header.tpl'}
 {include 'nav.tpl'}
+{include 'footer.tpl'}
 
 <section class="jumbotron text-center fondo ">
     <div >

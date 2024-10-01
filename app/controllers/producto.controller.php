@@ -16,7 +16,6 @@ class ProductoController {
     public function mostrarProductos(){
         $productos =  $this->model->getProductos();
 
-        //Pasarle a la vista las tareas
         $this->view->mostrarProductos($productos);
     }
 
