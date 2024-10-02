@@ -26,7 +26,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-disabled="true">Contacto</a>
+                <a class="nav-link" aria-disabled="true" href="contacto">Contacto</a>
               </li>
             </ul>
             <button class="btn btn-outline-success" type="button">Ingresar</button>

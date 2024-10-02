@@ -1,7 +1,7 @@
 <?php
 require_once 'libs/Smarty.class.php';
 
-class ProductoView {
+class UsuarioView {
 
     private $smarty;
 
@@ -10,10 +10,9 @@ class ProductoView {
         $this->smarty->assign('base', BASE_URL);
     }
 
-    public function mostrarProductos($productos, $materiales) {
-        $this->smarty->assign('productos', $productos);
+    public function mostrarContacto($materiales) {
         $this->smarty->assign('materiales', $materiales);
-        $this->smarty->display('inicio.tpl');
+        $this->smarty->display('contacto.tpl');
     }
 
 
