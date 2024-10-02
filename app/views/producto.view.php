@@ -11,7 +11,8 @@ class ProductoView {
     }
 
     public function mostrarProductos($productos, $materiales) {
-        $this->smarty->assign('productos', $productos, 'materiales', $materiales);
+        $this->smarty->assign('productos', $productos);
+        $this->smarty->assign('materiales', $materiales);
         $this->smarty->display('inicio.tpl');
     }
 
