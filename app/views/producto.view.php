@@ -10,8 +10,8 @@ class ProductoView {
         $this->smarty->assign('base', BASE_URL);
     }
 
-    public function mostrarProductos($productos) {
-        $this->smarty->assign('productos', $productos);
+    public function mostrarProductos($productos, $materiales) {
+        $this->smarty->assign('productos', $productos, 'materiales', $materiales);
         $this->smarty->display('inicio.tpl');
     }
 

@@ -40,10 +40,6 @@ switch ($params[0]) {
         $controller = new UsuarioController();
         $controller->registrarse();     
         break;
-    case 'materiales':
-        $controller = new MaterialController();
-        $controller->mostrarMateriales();
-        break;
     default:
         echo "404 not found";
         break;

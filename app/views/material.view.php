@@ -10,10 +10,10 @@ class MaterialView {
         $this->smarty->assign('base', BASE_URL);
     }
 
-    public function mostrarMateriales($materiales) {
-        $this->smarty->assign('materiales', $materiales);
-        $this->smarty->display('nav.tpl');
-    }
+    //public function mostrarMateriales($materiales) {
+       // $this->smarty->assign('materiales', $materiales);
+        //this->smarty->display('nav.tpl');
+    //}
 
 
 }
