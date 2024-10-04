@@ -21,7 +21,9 @@ class UsuarioController {
     }
 
     public function ingresar(){
-        $this->viewUsuario->mostrarFormularioIngreso();
+        $materiales = $this->modelMaterial->getMateriales();
+        $this->viewUsuario->mostrarFormularioIngreso($materiales);
+        
     }
 
     public function registrarse(){

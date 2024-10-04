@@ -21,8 +21,5 @@ form{
 
 .contenedor{
     color:green;
-}
-
-.fondo{
     background-image: url(../img/fondo.jpg);
 }

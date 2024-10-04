@@ -23,7 +23,8 @@ class ProductoController {
 
     public function detalleProducto($producto){
         $detalle=$this->modelProducto->detalleProducto($producto);
-        $this->viewProducto->detalleProducto($detalle);
+        $materiales = $this->modelMaterial->getMateriales();
+        $this->viewProducto->detalleProducto($detalle, $materiales);
 
     }
 }
