@@ -2,3 +2,11 @@
     font-size: 25px;
     border-bottom: solid 1px green;    
 }
+
+.contenedor{
+    color:green;
+}
+
+.fondo{
+    background-image: url(../img/fondo.jpg);
+}
