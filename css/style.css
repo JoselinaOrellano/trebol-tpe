@@ -3,6 +3,11 @@ a{
     color: green;
 }
 
+i{
+    color:black;
+}
+    
+
 a:hover{
     color: aliceblue;
 }
@@ -20,6 +25,14 @@ a:hover{
 }
 
 .contenedor{
+    height: 100vh;
     color:green;
     background-image: url(../img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+ul{
+    list-style:none;
 }
