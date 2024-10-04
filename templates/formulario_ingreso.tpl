@@ -17,5 +17,7 @@
   </div>
   <button type="submit" class="btn btn-outline-success">Ingresar</button>
 </form>
+<p> Todavía no tenes una cuenta?</p>
 <a href="registrarse" class="btn btn-outline-success">Registrarse</a>
+
 {include 'footer.tpl'}
