@@ -2,7 +2,7 @@
 {include 'nav.tpl'}
 {include 'footer.tpl'}
 
-<section class="jumbotron text-center fondo ">
+<section class="jumbotron text-center ">
     <div >
       <h1>Trebol Muebleria</h1>
       <p class="lead ">Estilo y comodidad</p>   
@@ -24,7 +24,7 @@
                 <p class="card-text">{$producto->id_material}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <a href="ciudad/{$producto->id_producto}" class="btn btn-success">Ver mas</a>
+                    <a href="producto/{$producto->id_producto}" class="btn btn-success">Ver mas</a>
                   </div>
                 </div>
               </div>

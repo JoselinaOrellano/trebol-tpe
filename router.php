@@ -20,6 +20,10 @@ switch ($params[0]) {
     case 'inicio':
         $controllerProducto->mostrarProductos();
         break;
+    case 'producto':
+        $producto=$params[1];
+        $controllerProducto ->detalleProducto($producto);
+        break;
     case 'nuevoProducto':
         $controllerProducto->insertarProducto();
         break;

@@ -28,6 +28,20 @@ class ProductoModel{
     
         return $productos;
     }
+
+    public function detalleProducto($id){
+        
+        $pdo = $this->crearConexion();
+
+        $sql = "select * from productos  where id_producto = ?";
+        $query = $pdo->prepare($sql);
+        $query->execute([$id]);
+    
+        $producto = $query->fetchAll(PDO::FETCH_OBJ);
+
+        return $producto; 
+
+    }
 }
 
 ?>

@@ -21,4 +21,9 @@ class ProductoController {
         $this->viewProducto->mostrarProductos($productos, $materiales);
     }
 
+    public function detalleProducto($producto){
+        $detalle=$this->modelProducto->detalleProducto($producto);
+        $this->viewProducto->detalleProducto($detalle);
+
+    }
 }

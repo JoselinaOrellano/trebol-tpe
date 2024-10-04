@@ -18,3 +18,11 @@ form{
 .btn{
     margin: 10px;
 }
+
+.contenedor{
+    color:green;
+}
+
+.fondo{
+    background-image: url(../img/fondo.jpg);
+}
