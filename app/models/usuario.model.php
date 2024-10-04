@@ -16,15 +16,30 @@ class UsuariolModel{
         return $pdo;
     }
 
-    public function getUsuarios(){
+    public function getUsuario($nombreUsuario){
         $pdo = $this->crearConexion();
-        $sql = "select * from usuarios";
+
+        $sql = "select * from usuarios where nombre_usuario = ?";
         $query = $pdo->prepare($sql);
-        $query->execute();
+        $query->execute([$nombreUsuario]);
     
-        $usuarios = $query->fetchAll(PDO::FETCH_OBJ);
+        $usuario = $query->fetch(PDO::FETCH_OBJ);
     
-        return $usuarios;
+        return $usuario;
+    }
+
+    public function crearUsuario($nombre, $apellido, $nombreUsuario, $password){
+        $pDO = $this->crearConexion();
+        
+        $sql = 'INSERT INTO usuario (nombre, apellido, nombre_usuario, password,) 
+                VALUES (?, ?, ?, ?)';
+                
+        $query = $pDO->prepare($sql);
+        try {
+            $query->execute([$nombre, $apellido, $nombreUsuario, $password]);
+        } catch (\Throwable $th) {
+            return null;
+        }
     }
 
     

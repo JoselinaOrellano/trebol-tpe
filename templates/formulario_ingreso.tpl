@@ -1,6 +1,6 @@
 {include 'header.tpl'}
 {include 'nav.tpl'}
-{include 'footer.tpl'}
+
 <h1>FORMULARIO INGRESO</h1>
 <form>
   <div class="row mb-3">
@@ -18,3 +18,4 @@
   <button type="submit" class="btn btn-outline-success">Ingresar</button>
 </form>
 <a href="registrarse" class="btn btn-outline-success">Registrarse</a>
+{include 'footer.tpl'}

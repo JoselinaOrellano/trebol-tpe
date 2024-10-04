@@ -29,7 +29,7 @@
                 <a class="nav-link" aria-disabled="true" href="contacto">Contacto</a>
               </li>
             </ul>
-            <a href="ingresar" class="btn btn-outline-success">Ingresar</a>
+            <button class="btn btn-outline-success"><a href="ingresar">Ingresar</a></button>
           </div>
           
         </div>

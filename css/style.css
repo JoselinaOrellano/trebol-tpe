@@ -1,4 +1,20 @@
+a{
+    text-decoration: none;
+    color: green;
+}
+
+a:hover{
+    color: aliceblue;
+}
+
 .navbar{
     font-size: 25px;
     border-bottom: solid 1px green;    
+}
+form{
+    background-color: brown;
+}
+
+.btn{
+    margin: 10px;
 }
