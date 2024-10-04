@@ -37,7 +37,7 @@ class ProductoModel{
         $query = $pdo->prepare($sql);
         $query->execute([$id]);
     
-        $producto = $query->fetchAll(PDO::FETCH_OBJ);
+        $producto = $query->fetch(PDO::FETCH_OBJ);
 
         return $producto; 
 

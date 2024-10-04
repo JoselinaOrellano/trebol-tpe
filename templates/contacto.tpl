@@ -13,16 +13,17 @@
 
             <ul>
                 <li>
-                    <i class="bi bi-whatsapp">249-4316563</i>
+                    <i class="fa-solid fa-location-dot fa-xl"> 249-4316563</i>
                 </li>
                 <li>
-                    <i class="bi bi-envelope">trebol.mmuebleria@gmail.com</i>
+                    <i i class="fa-solid fa-envelope fa-xl" > trebolmuebleria@gmail.com </i>
+                
                 </li>
                 <li>
-                    <i class="bi bi-facebook">Trebol Muebleria</i>
+                    <i class="fa-brands fa-facebook fa-xl"> Trebol Muebleria</i>
                 </li>
                 <li>
-                    <i class="bi bi-instagram">@trebol.muebleria</i>
+                    <i class="fa-brands fa-instagram fa-xl"> @trebol.muebleria</i>
                 </li>
             </ul>
 
