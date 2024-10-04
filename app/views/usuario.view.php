@@ -15,6 +15,14 @@ class UsuarioView {
         $this->smarty->display('contacto.tpl');
     }
 
+    public function mostrarFormularioIngreso(){
+        $this->smarty->display('formulario_ingreso.tpl');
+    }
+
+    public function mostrarFormularioRegistro(){ //estas ultimas dos funciones deberian llamarse igual y pasar nombre de formulario como parametro
+        $this->smarty->display('formulario_registro.tpl');
+    }
+
 
 }
 ?>

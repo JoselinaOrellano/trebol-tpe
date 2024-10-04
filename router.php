@@ -37,7 +37,7 @@ switch ($params[0]) {
         $controllerUsuario->mostrarContacto(); 
         break;
     case 'ingresar':
-        $controllerUsuario->ingresar();     
+        $controllerUsuario->ingresar();    //esta funcion no deberia llamarse de otra manera?? no estoy seguro igual 
         break;
     case 'registrarse':
         $controllerUsuario->registrarse();     

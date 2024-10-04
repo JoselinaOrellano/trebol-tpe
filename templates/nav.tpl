@@ -29,7 +29,8 @@
                 <a class="nav-link" aria-disabled="true" href="contacto">Contacto</a>
               </li>
             </ul>
-            <button class="btn btn-outline-success" type="button">Ingresar</button>
+            <a href="ingresar" class="btn btn-outline-success">Ingresar</a>
           </div>
+          
         </div>
       </nav>
