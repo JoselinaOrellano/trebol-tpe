@@ -20,6 +20,14 @@ class UsuarioController {
         $this->viewUsuario->mostrarContacto($materiales);
     }
 
+    public function ingresar(){
+        $this->viewUsuario->mostrarFormularioIngreso();
+    }
+
+    public function registrarse(){
+        $this->viewUsuario->mostrarFormularioRegistro();//creo q deberia haber una sola funcion mostrar formulario con un parametro para identificar registro o login
+    }
+
 
 }
 
