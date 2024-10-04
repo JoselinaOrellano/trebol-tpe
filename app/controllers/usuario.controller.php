@@ -27,7 +27,8 @@ class UsuarioController {
     }
 
     public function registrarse(){
-        $this->viewUsuario->mostrarFormularioRegistro();//creo q deberia haber una sola funcion mostrar formulario con un parametro para identificar registro o login
+        $materiales = $this->modelMaterial->getMateriales();
+        $this->viewUsuario->mostrarFormularioRegistro($materiales);//creo q deberia haber una sola funcion mostrar formulario con un parametro para identificar registro o login
     }
 
 
