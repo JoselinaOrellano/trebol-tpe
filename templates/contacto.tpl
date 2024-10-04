@@ -1,6 +1,6 @@
 {include 'header.tpl'}
 {include 'nav.tpl'}
-{include 'footer.tpl'}
+
 
     <div class="contenedor">
         <section class="jumbotron text-center  ">
@@ -17,4 +17,4 @@
         </div> 
     </div>
     
-    
+{include 'footer.tpl'}

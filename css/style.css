@@ -11,12 +11,12 @@ a:hover{
     font-size: 25px;
     border-bottom: solid 1px green;    
 }
-form{
-    background-color: brown;
+.form-control{
+    width: 250px;
 }
 
 .btn{
-    margin: 10px;
+    margin-bottom: 10px;
 }
 
 .contenedor{

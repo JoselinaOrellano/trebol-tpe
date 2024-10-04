@@ -1,6 +1,6 @@
 {include 'header.tpl'}
 {include 'nav.tpl'}
-{include 'footer.tpl'}
+
 
 <div>
 <div class="card" style="width: 18rem;">
@@ -20,3 +20,5 @@
 </div>
 </div>
 </div>
+
+{include 'footer.tpl'}
