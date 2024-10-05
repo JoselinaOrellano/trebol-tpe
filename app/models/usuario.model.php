@@ -28,15 +28,15 @@ class UsuariolModel{
         return $usuario;
     }
 
-    public function crearUsuario($nombre, $apellido, $nombreUsuario, $password){
+    public function crearUsuario($nombre, $apellido, $email, $nombreUsuario, $password){
         $pDO = $this->crearConexion();
         
-        $sql = 'INSERT INTO usuario (nombre, apellido, nombre_usuario, password,) 
-                VALUES (?, ?, ?, ?)';
-                
+        $sql = 'INSERT INTO usuarios (nombre, apellido, email, nombre_usuario, password) 
+                VALUES (?, ?, ?, ?, ?)';
+
         $query = $pDO->prepare($sql);
         try {
-            $query->execute([$nombre, $apellido, $nombreUsuario, $password]);
+            $query->execute([$nombre, $apellido, $email, $nombreUsuario, $password]);
         } catch (\Throwable $th) {
             return null;
         }

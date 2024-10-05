@@ -39,8 +39,14 @@ switch ($params[0]) {
     case 'ingresar':
         $controllerUsuario->ingresar();    //esta funcion no deberia llamarse de otra manera?? no estoy seguro igual 
         break;
+    case 'login':
+        $controllerUsuario->autenticar();
+        break;
     case 'registrarse':
         $controllerUsuario->registrarse();     
+        break;
+    case 'registrar':
+        $controllerUsuario->agregarUsuario();     
         break;
     default:
         echo "404 not found";
