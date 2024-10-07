@@ -42,6 +42,13 @@ class ProductoModel{
         return $producto; 
 
     }
+
+    public function eliminarProducto($producto){
+        $pdo = $this->crearConexion();
+        $sql = "DELETE FROM productos WHERE id_producto =?";
+        $query = $pdo->prepare($sql);
+        $query->execute([$producto]);
+    }
 }
 
 ?>

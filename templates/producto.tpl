@@ -12,6 +12,11 @@
 <ul class="list-group list-group-flush">
   <li class="list-group-item">{$producto->descripcion}</li>
   <li class="list-group-item">{$producto->id_material}</li>
+  <div class="btn-group">
+    <a href="eliminarProducto/{$producto->id_producto}" class="btn btn-success">eliminar</a>
+    <a href="modificarProducto/{$producto->id_producto}" class="btn btn-success">modificar</a>
+
+  </div>
 </ul>
 </div>
 </div>
