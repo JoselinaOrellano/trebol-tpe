@@ -20,7 +20,7 @@
                 <ul class="dropdown-menu">
                   <li>
                     {foreach from=$materiales item=$material}
-                      <a class="dropdown-item" href="{$material->id_material}"> {$material->nombre} </a>
+                      <a class="dropdown-item" href="{$material->id_material}"> {$material->material} </a>
                     {/foreach}
                   </li>
                 </ul>
