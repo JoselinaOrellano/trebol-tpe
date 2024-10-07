@@ -30,6 +30,7 @@
               </li>
             </ul>
             <button class="btn btn-outline-success"><a href="ingresar">Ingresar</a></button>
+            <button class="btn btn-outline-success"><a href="logout">Cerrar sesión</a></button>
           </div>
           
         </div>

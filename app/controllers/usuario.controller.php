@@ -31,7 +31,6 @@ class UsuarioController {
 
         $user = $this->modelUsuario->getUsuario($nombreUsuario);
 
-        //Si el usuario existe y las contraseñas coinciden
         if($user && password_verify($password,($user->password))){
             session_start();
 
@@ -40,7 +39,7 @@ class UsuarioController {
     
             header('Location: '.'inicio');
         }else{
-            header('Location: '.'/login');
+            header('Location: '.'ingresar');//deberia aparecen mjs? tanto sesion iniciada como clave incorrecta?
         }
 
     }

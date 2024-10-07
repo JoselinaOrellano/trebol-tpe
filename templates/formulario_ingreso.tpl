@@ -2,7 +2,7 @@
 {include 'nav.tpl'}
 
 <h1>FORMULARIO INGRESO</h1>
-<form method="POST" action="login">
+<form href="login" method="POST" action="login">
   <div class="row mb-3">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Usuario</label>
     <div class="col-sm-10">
