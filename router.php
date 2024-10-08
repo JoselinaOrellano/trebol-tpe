@@ -28,10 +28,12 @@ switch ($params[0]) {
         $controllerProducto->insertarProducto();
         break;
     case 'modificarProducto':
-        $controllerProducto->modificarProducto();
+        $producto=$params[1];
+        $controllerProducto->modificarProducto($producto);        
         break;
     case 'eliminarProducto':
-        $controllerProducto->eliminarProducto();     
+        $producto=$params[1];
+        $controllerProducto->eliminarProducto($producto);     
         break;
     case 'contacto':
         $controllerUsuario->mostrarContacto(); 

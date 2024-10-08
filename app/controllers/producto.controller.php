@@ -27,4 +27,10 @@ class ProductoController {
         $this->viewProducto->detalleProducto($detalle, $materiales);
 
     }
+
+    public function eliminarProducto($producto){
+        //$this->verificarUsuario();
+        $this->modelProducto->eliminarProducto($producto);
+        header('Location: ' . BASE_URL . 'inicio'); 
+    }
 }
