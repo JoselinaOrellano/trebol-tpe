@@ -21,7 +21,7 @@
               <div class="card-body">
                 <h4>${$producto->precio}</h4>
                 <h5>{$producto->nombre}</h5>
-                <p class="card-text">{$producto->id_material}</p>
+                <p class="card-text">{$producto->material}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <a href="producto/{$producto->id_producto}" class="btn btn-success">Ver mas</a>

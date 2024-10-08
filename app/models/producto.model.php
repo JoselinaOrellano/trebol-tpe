@@ -20,7 +20,10 @@ class ProductoModel{
     public function getProductos(){
         $pdo = $this->crearConexion();
 
-        $sql = "select * from productos ";
+        $sql = "SELECT a.*, b.*
+                FROM productos a
+                INNER JOIN materiales b
+                ON a.id_material = b.id_material";
         $query = $pdo->prepare($sql);
         $query->execute();
     
@@ -28,6 +31,18 @@ class ProductoModel{
     
         return $productos;
     }
+
+    // public function getProductos(){
+    //     $pdo = $this->crearConexion();
+
+    //     $sql = "select * from productos ";
+    //     $query = $pdo->prepare($sql);
+    //     $query->execute();
+    
+    //     $productos = $query->fetchAll(PDO::FETCH_OBJ);
+    
+    //     return $productos;
+    // }
 
     public function detalleProducto($id){
         
