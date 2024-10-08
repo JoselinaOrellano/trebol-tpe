@@ -33,4 +33,11 @@ class ProductoController {
         $this->modelProducto->eliminarProducto($producto);
         header('Location: ' . BASE_URL . 'inicio'); 
     }
+
+    public function modificarProducto($id_producto){
+        //$this->verificarUsuario();
+        $materiales = $this->modelMaterial->getMateriales();
+        $producto=$this->modelProducto->detalleProducto($id_producto);
+        $this->viewProducto->modificarProducto($producto, $materiales);
+    }
 }

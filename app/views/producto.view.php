@@ -21,5 +21,11 @@ class ProductoView {
             $this->smarty->assign('materiales', $materiales);
             $this->smarty->display('producto.tpl');
         }
+    
+     public function modificarProducto($producto, $materiales){
+        $this->smarty->assign('producto', $producto);
+        $this->smarty->assign('materiales', $materiales);
+        $this->smarty->display('formulario_modificarProducto.tpl');
+     }
 }
 ?>
