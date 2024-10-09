@@ -48,7 +48,7 @@ class ProductoModel{
 
     public function detalleProducto($id){
         
-        $pdo = $this->crearConexion();
+        $pdo = crearConexion();
 
         $sql = "select * from productos  where id_producto = ?";
         $query = $pdo->prepare($sql);
@@ -61,7 +61,7 @@ class ProductoModel{
     }
 
     public function eliminarProducto($producto){
-        $pdo = $this->crearConexion();
+        $pdo = crearConexion();
         $sql = "DELETE FROM productos WHERE id_producto =?";
         $query = $pdo->prepare($sql);
         $query->execute([$producto]);

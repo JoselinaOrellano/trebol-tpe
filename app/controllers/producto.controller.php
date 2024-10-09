@@ -16,6 +16,7 @@ class ProductoController {
     }
 
     public function mostrarProductos(){
+
         $productos =  $this->modelProducto->getProductos();
         $materiales = $this->modelMaterial->getMateriales();
         $this->viewProducto->mostrarProductos($productos, $materiales);
