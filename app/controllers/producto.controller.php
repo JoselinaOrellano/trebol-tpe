@@ -47,12 +47,28 @@ class ProductoController {
         $nombre = $_POST['nombreProducto'];
         $precio = $_POST['precioProducto'];
         $descripcion = $_POST['descripcionProducto'];
-        $imagen = $_POST['imagenProducto'];
+        $imagen = "img/". $_POST['imagenProducto'];
         $material = $_POST['materialProducto'];
 
 
         $this->modelProducto->guardarCambios($nombre, $precio, $descripcion, $imagen, $material, $id_producto);
         header('Location: ' . BASE_URL . 'inicio'); 
+    }
+
+    public function agregarProducto(){
+        $materiales = $this->modelMaterial->getMateriales();
+        $this->viewProducto->agregarProducto($materiales);
+    }
+
+    public function cargarProducto(){
+        $nombre = $_POST['nombreProducto'];
+        $precio = $_POST['precioProducto'];
+        $descripcion = $_POST['descripcionProducto'];
+        $imagen = "img/". $_POST['imagenProducto'];
+        $material = $_POST['materialProducto'];
+
+        $this->modelProducto->cargarProducto($nombre, $precio, $descripcion, $imagen, $material);
+        header('Location: ' . BASE_URL . 'inicio');
     }
 
 }

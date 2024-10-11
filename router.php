@@ -39,10 +39,17 @@ switch ($params[0]) {
         $producto=$params[1];
         $controllerProducto->eliminarProducto($producto);     
         break;
+    case 'agregarProducto':
+        $controllerProducto->agregarProducto();
+        break;
     case 'cargarProducto':
-        $controllerProducto->modificarProducto($id_producto);
+        $controllerProducto->cargarProducto();        
+        break;    
     case 'contacto':
         $controllerUsuario->mostrarContacto(); 
+        break;
+    case 'agregarProducto':
+        $controllerProducto->agregarProducto();
         break;
     case 'ingresar':
         $controllerUsuario->ingresar();    //esta funcion no deberia llamarse de otra manera?? no estoy seguro igual 

@@ -2,9 +2,9 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                  <img src="img/logo.jpg" alt="Logo" width="50" height="50">
-                </a>
+          <a class="navbar-brand" href="#">
+            <img src="img/logo.jpg" alt="Logo" width="50" height="50">
+          </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -28,7 +28,11 @@
               <li class="nav-item">
                 <a class="nav-link" aria-disabled="true" href="contacto">Contacto</a>
               </li>
-            </ul>
+            
+              <li class="nav-item">
+                <a class="nav-link" aria-disabled="true" href="agregarProducto">Agregar producto</a>
+              </li>
+          </ul>
             <button class="btn btn-outline-success"><a href="ingresar">Ingresar</a></button>
             <button class="btn btn-outline-success"><a href="logout">Cerrar sesión</a></button>
           </div>

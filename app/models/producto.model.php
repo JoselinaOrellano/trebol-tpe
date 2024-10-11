@@ -75,6 +75,15 @@ class ProductoModel{
         $query = $pdo->prepare($sql);
         $query->execute([$nombre, $precio, $descripcion, $imagen, $material, $id_producto]);
     }
+
+    public function cargarProducto($nombre, $precio, $descripcion, $imagen, $material){
+        $pdo = $this->crearConexion();
+        
+        $sql = 'INSERT INTO productos SET nombre=?, precio=?, descripcion=?, imagen=?, id_material=? ';
+
+        $query = $pdo->prepare($sql);
+        $query->execute([$nombre, $precio, $descripcion, $imagen, $material]);
+    }
 }
 
 ?>
