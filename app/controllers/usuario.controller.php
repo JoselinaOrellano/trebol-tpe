@@ -36,7 +36,7 @@ class UsuarioController {
 
             $_SESSION["logueado"] = true;
             $_SESSION["usuario"] = $nombreUsuario;
-    
+            
             header('Location: '.'inicio');
         }else{
             header('Location: '.'ingresar');//deberia aparecen mjs? tanto sesion iniciada como clave incorrecta?

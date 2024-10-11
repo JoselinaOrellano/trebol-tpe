@@ -31,7 +31,7 @@ class UsuariolModel{
     }
 
     public function crearUsuario($nombre, $apellido, $email, $nombreUsuario, $password){
-        $pDO = $this->crearConexion();
+        $pDO = crearConexion();
         
         $sql = 'INSERT INTO usuarios (nombre, apellido, email, nombre_usuario, password) 
                 VALUES (?, ?, ?, ?, ?)';
