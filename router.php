@@ -31,10 +31,16 @@ switch ($params[0]) {
         $id_producto=$params[1];
         $controllerProducto->modificarProducto($id_producto);        
         break;
+    case 'guardarCambios':
+        $id_producto=$params[1];
+        $controllerProducto->guardarCambios($id_producto);        
+        break;
     case 'eliminarProducto':
         $producto=$params[1];
         $controllerProducto->eliminarProducto($producto);     
         break;
+    case 'cargarProducto':
+        $controllerProducto->modificarProducto($id_producto);
     case 'contacto':
         $controllerUsuario->mostrarContacto(); 
         break;

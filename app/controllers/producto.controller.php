@@ -32,6 +32,7 @@ class ProductoController {
         //$this->verificarUsuario();
         $this->modelProducto->eliminarProducto($producto);
         header('Location: ' . BASE_URL . 'inicio'); 
+
     }
 
     public function modificarProducto($id_producto){
@@ -40,4 +41,17 @@ class ProductoController {
         $producto=$this->modelProducto->detalleProducto($id_producto);
         $this->viewProducto->modificarProducto($producto, $materiales);
     }
+
+    public function guardarCambios($id_producto){
+        $nombre = $_POST['nombreProducto'];
+        $precio = $_POST['precioProducto'];
+        $descripcion = $_POST['descripcionProducto'];
+        $imagen = $_POST['imagenProducto'];
+        $material = $_POST['materialProducto'];
+
+
+        $this->modelProducto->guardarCambios($nombre, $precio, $descripcion, $imagen, $material, $id_producto);
+        header('Location: ' . BASE_URL . 'inicio'); 
+    }
+
 }
