@@ -14,13 +14,13 @@
                 <a class="nav-link active" aria-current="page" href="#">Inicio</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Materiales
                 </a>
                 <ul class="dropdown-menu">
                   <li>
                     {foreach from=$materiales item=$material}
-                      <a class="dropdown-item" href="{$material->id_material}"> {$material->material} </a>
+                      <a class="dropdown-item" href="mostrarCategoria/{$material->id_material}"> {$material->material} </a>
                     {/foreach}
                   </li>
                 </ul>

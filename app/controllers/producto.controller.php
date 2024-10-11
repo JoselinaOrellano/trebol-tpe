@@ -71,4 +71,10 @@ class ProductoController {
         header('Location: ' . BASE_URL . 'inicio');
     }
 
+    public function mostrarCategoria($material){
+        $productos =  $this->modelProducto->getProductosCategoria($material);
+        $materiales = $this->modelMaterial->getMateriales();
+        $this->viewProducto->mostrarProductos($productos, $materiales);
+    }
+
 }

@@ -34,6 +34,20 @@ class ProductoModel{
         return $productos;
     }
 
+    public function getProductosCategoria($material){
+        $pdo = crearConexion();
+
+        $sql = "select * from productos  where id_material = ?";
+        $query = $pdo->prepare($sql);
+        $query->execute([$material]);
+    
+        $producto = $query->fetch(PDO::FETCH_OBJ);
+        var_dump ($producto);
+        die ();
+
+        return $producto; 
+    }
+
     // public function getProductos(){
     //     $pdo = $this->crearConexion();
 
