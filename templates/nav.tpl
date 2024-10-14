@@ -28,9 +28,17 @@
               <li class="nav-item">
                 <a class="nav-link" aria-disabled="true" href="contacto">Contacto</a>
               </li>
-            </ul>
+              
             {if ($logueado)}
-              <button class="btn btn-outline-success"><a href="logout">Cerrar sesión</a></button>
+              <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                  <a class="nav-link" aria-disabled="true" href="agregarProducto">Agregar producto</a>
+                </li>
+             </ul>
+             <div class="d-flex">
+                <button class="btn btn-outline-success"><a href="logout">Cerrar sesión</a></button>
+              </div>
+              
             {else}
               <button class="btn btn-outline-success"><a href="ingresar">Ingresar</a></button>  
             {/if}

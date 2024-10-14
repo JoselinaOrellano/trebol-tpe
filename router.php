@@ -53,9 +53,6 @@ switch ($params[0]) {
     case 'contacto':
         $controllerUsuario->mostrarContacto($logueado); 
         break;
-    case 'agregarProducto':
-        $controllerProducto->agregarProducto();
-        break;
     case 'ingresar':
         $controllerUsuario->ingresar($logueado);
         break;

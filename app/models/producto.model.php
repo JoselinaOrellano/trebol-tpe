@@ -37,15 +37,13 @@ class ProductoModel{
     public function getProductosCategoria($material){
         $pdo = crearConexion();
 
-        $sql = "select * from productos  where id_material = ?";
+        $sql = "SELECT * FROM productos  WHERE id_material = ?";
         $query = $pdo->prepare($sql);
         $query->execute([$material]);
     
-        $producto = $query->fetch(PDO::FETCH_OBJ);
-        var_dump ($producto);
-        die ();
+        $productos = $query->fetch(PDO::FETCH_OBJ);
 
-        return $producto; 
+        return $productos; 
     }
 
     // public function getProductos(){

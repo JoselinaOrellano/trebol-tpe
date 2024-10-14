@@ -59,8 +59,9 @@ class ProductoController {
     }
 
     public function agregarProducto(){
+        $logueado = $this->userController->logueado();
         $materiales = $this->modelMaterial->getMateriales();
-        $this->viewProducto->agregarProducto($materiales);
+        $this->viewProducto->agregarProducto($materiales, $logueado);
     }
 
     public function cargarProducto(){
@@ -77,7 +78,8 @@ class ProductoController {
     public function mostrarCategoria($material){
         $productos =  $this->modelProducto->getProductosCategoria($material);
         $materiales = $this->modelMaterial->getMateriales();
-        $this->viewProducto->mostrarProductos($productos, $materiales);
+        $logueado = $this->userController->logueado();
+        $this->viewProducto->mostrarProductos($productos, $materiales, $logueado);
     }
 
 }

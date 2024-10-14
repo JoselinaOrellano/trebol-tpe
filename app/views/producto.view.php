@@ -31,8 +31,9 @@ class ProductoView {
         $this->smarty->display('formulario_modificarProducto.tpl');
      }
 
-     public function agregarProducto($materiales){
+     public function agregarProducto($materiales, $logueado){
         $this->smarty->assign('materiales', $materiales);
+        $this->smarty->assign('logueado', $logueado);
         $this->smarty->display('formulario_agregarProducto.tpl');
      }
 }
