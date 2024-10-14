@@ -21,6 +21,10 @@ switch ($params[0]) {
     case 'inicio':
         $controllerProducto->mostrarProductos();
         break;
+    case 'mostrarCategoria':
+        $material=$params[1];
+        $controllerProducto ->mostrarCategoria($material);
+        break;
     case 'producto':
         $producto=$params[1];
         $controllerProducto ->detalleProducto($producto);
@@ -32,12 +36,25 @@ switch ($params[0]) {
         $id_producto=$params[1];
         $controllerProducto->modificarProducto($id_producto);        
         break;
+    case 'guardarCambios':
+        $id_producto=$params[1];
+        $controllerProducto->guardarCambios($id_producto);        
+        break;
     case 'eliminarProducto':
         $producto=$params[1];
         $controllerProducto->eliminarProducto($producto);     
         break;
+    case 'agregarProducto':
+        $controllerProducto->agregarProducto();
+        break;
+    case 'cargarProducto':
+        $controllerProducto->cargarProducto();        
+        break;    
     case 'contacto':
         $controllerUsuario->mostrarContacto($logueado); 
+        break;
+    case 'agregarProducto':
+        $controllerProducto->agregarProducto();
         break;
     case 'ingresar':
         $controllerUsuario->ingresar($logueado);

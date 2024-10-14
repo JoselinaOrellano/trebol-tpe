@@ -19,6 +19,8 @@
     <a href="eliminarProducto/{$producto->id_producto}" class="btn btn-success">eliminar</a>
     <a href="modificarProducto/{$producto->id_producto}" class="btn btn-success">modificar</a>
 
+      </div>
+    </ul>
   </div>
   {/if}
 </ul>

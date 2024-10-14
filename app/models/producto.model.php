@@ -5,19 +5,19 @@ require_once 'conexion_db.php';
 class ProductoModel{
     //conexion a la db
 
-    // private function crearConexion(){
-    //     $host = 'localhost';
-    //     $user = 'root';
-    //     $password = '';
-    //     $database = 'trebol_muebleria';
+    private function crearConexion(){
+        $host = 'localhost';
+        $user = 'root';
+        $password = '';
+        $database = 'trebol_muebleria';
 
-    //     try {
-    //         $pdo = new PDO("mysql:host=$host;dbname=$database;charset=utf8", $user, $password);
-    //     } catch (\Throwable $th) {
-    //         die($th);
-    //     }
-    //     return $pdo;
-    // }
+        try {
+            $pdo = new PDO("mysql:host=$host;dbname=$database;charset=utf8", $user, $password);
+        } catch (\Throwable $th) {
+            die($th);
+        }
+        return $pdo;
+    }
 
     public function getProductos(){
         $pdo = crearConexion();
@@ -32,6 +32,20 @@ class ProductoModel{
         $productos = $query->fetchAll(PDO::FETCH_OBJ);
     
         return $productos;
+    }
+
+    public function getProductosCategoria($material){
+        $pdo = crearConexion();
+
+        $sql = "select * from productos  where id_material = ?";
+        $query = $pdo->prepare($sql);
+        $query->execute([$material]);
+    
+        $producto = $query->fetch(PDO::FETCH_OBJ);
+        var_dump ($producto);
+        die ();
+
+        return $producto; 
     }
 
     // public function getProductos(){
@@ -65,6 +79,24 @@ class ProductoModel{
         $sql = "DELETE FROM productos WHERE id_producto =?";
         $query = $pdo->prepare($sql);
         $query->execute([$producto]);
+    }
+
+    public function guardarCambios($nombre, $precio, $descripcion, $imagen, $material, $id_producto){
+        $pdo = $this->crearConexion();
+        
+        $sql = 'UPDATE productos SET nombre=?, precio=?, descripcion=?, imagen=?, id_material=? WHERE id_producto=?';
+
+        $query = $pdo->prepare($sql);
+        $query->execute([$nombre, $precio, $descripcion, $imagen, $material, $id_producto]);
+    }
+
+    public function cargarProducto($nombre, $precio, $descripcion, $imagen, $material){
+        $pdo = $this->crearConexion();
+        
+        $sql = 'INSERT INTO productos SET nombre=?, precio=?, descripcion=?, imagen=?, id_material=? ';
+
+        $query = $pdo->prepare($sql);
+        $query->execute([$nombre, $precio, $descripcion, $imagen, $material]);
     }
 }
 

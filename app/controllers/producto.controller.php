@@ -35,8 +35,8 @@ class ProductoController {
 
     public function eliminarProducto($producto){
         $this->modelProducto->eliminarProducto($producto);
-        header('Location: ' . BASE_URL . 'inicio');
-        
+        header('Location: ' . BASE_URL . 'inicio'); 
+
     }
 
     public function modificarProducto($id_producto){
@@ -45,4 +45,39 @@ class ProductoController {
         $producto=$this->modelProducto->detalleProducto($id_producto);
         $this->viewProducto->modificarProducto($producto, $materiales, $logueado);
     }
+
+    public function guardarCambios($id_producto){
+        $nombre = $_POST['nombreProducto'];
+        $precio = $_POST['precioProducto'];
+        $descripcion = $_POST['descripcionProducto'];
+        $imagen = "img/". $_POST['imagenProducto'];
+        $material = $_POST['materialProducto'];
+
+
+        $this->modelProducto->guardarCambios($nombre, $precio, $descripcion, $imagen, $material, $id_producto);
+        header('Location: ' . BASE_URL . 'inicio'); 
+    }
+
+    public function agregarProducto(){
+        $materiales = $this->modelMaterial->getMateriales();
+        $this->viewProducto->agregarProducto($materiales);
+    }
+
+    public function cargarProducto(){
+        $nombre = $_POST['nombreProducto'];
+        $precio = $_POST['precioProducto'];
+        $descripcion = $_POST['descripcionProducto'];
+        $imagen = "img/". $_POST['imagenProducto'];
+        $material = $_POST['materialProducto'];
+
+        $this->modelProducto->cargarProducto($nombre, $precio, $descripcion, $imagen, $material);
+        header('Location: ' . BASE_URL . 'inicio');
+    }
+
+    public function mostrarCategoria($material){
+        $productos =  $this->modelProducto->getProductosCategoria($material);
+        $materiales = $this->modelMaterial->getMateriales();
+        $this->viewProducto->mostrarProductos($productos, $materiales);
+    }
+
 }
