@@ -15,6 +15,7 @@ $params = explode('/', $action);
 
 $controllerProducto = new ProductoController();
 $controllerUsuario = new UsuarioController();
+$controllerMateriales =  new MaterialController();
 $logueado = $controllerUsuario->logueado();
 
 switch ($params[0]) {
@@ -67,6 +68,10 @@ switch ($params[0]) {
         break;
     case 'registrar':
         $controllerUsuario->agregarUsuario();     
+        break;
+
+    case 'modificarMateriales':
+        $controllerMateriales->modificarMateriales();
         break;
     default:
         echo "404 not found";
