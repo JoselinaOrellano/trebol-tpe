@@ -15,14 +15,31 @@ class UsuarioController {
         $this->modelMaterial = new MaterialModel();
     }
 
-    public function mostrarContacto(){
+    public function mostrarContacto($logueado){
         $materiales = $this->modelMaterial->getMateriales();
-        $this->viewUsuario->mostrarContacto($materiales);
+        $this->viewUsuario->mostrarContacto($materiales, $logueado);
     }
 
-    public function ingresar(){
+    public function ingresar($logueado){
         $materiales = $this->modelMaterial->getMateriales();
-        $this->viewUsuario->mostrarFormulario($materiales, 'formulario_ingreso.tpl');        
+        $this->viewUsuario->mostrarFormulario($materiales, 'formulario_ingreso.tpl', $logueado);        
+    }
+
+    public function logout () {
+        session_start();
+        session_destroy();
+
+        header('Location: '.'login');
+    }
+
+    function logueado(){
+        
+        if (isset($_SESSION["usuario"])){
+            return true;
+        }else{
+            session_start();
+            return false;
+        }
     }
 
     public function autenticar(){
@@ -44,9 +61,9 @@ class UsuarioController {
 
     }
 
-    public function registrarse(){
+    public function registrarse($logueado){
         $materiales = $this->modelMaterial->getMateriales();
-        $this->viewUsuario->mostrarFormulario($materiales, 'formulario_registro.tpl');//creo q deberia haber una sola funcion mostrar formulario con un parametro para identificar registro o login
+        $this->viewUsuario->mostrarFormulario($materiales, 'formulario_registro.tpl', $logueado);//creo q deberia haber una sola funcion mostrar formulario con un parametro para identificar registro o login
     }
 
     public function agregarUsuario (){

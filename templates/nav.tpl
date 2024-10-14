@@ -29,8 +29,11 @@
                 <a class="nav-link" aria-disabled="true" href="contacto">Contacto</a>
               </li>
             </ul>
-            <button class="btn btn-outline-success"><a href="ingresar">Ingresar</a></button>
-            <button class="btn btn-outline-success"><a href="logout">Cerrar sesión</a></button>
+            {if ($logueado)}
+              <button class="btn btn-outline-success"><a href="logout">Cerrar sesión</a></button>
+            {else}
+              <button class="btn btn-outline-success"><a href="ingresar">Ingresar</a></button>  
+            {/if}
           </div>
           
         </div>

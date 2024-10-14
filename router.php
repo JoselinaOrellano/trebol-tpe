@@ -15,6 +15,7 @@ $params = explode('/', $action);
 
 $controllerProducto = new ProductoController();
 $controllerUsuario = new UsuarioController();
+$logueado = $controllerUsuario->logueado();
 
 switch ($params[0]) {
     case 'inicio':
@@ -36,16 +37,19 @@ switch ($params[0]) {
         $controllerProducto->eliminarProducto($producto);     
         break;
     case 'contacto':
-        $controllerUsuario->mostrarContacto(); 
+        $controllerUsuario->mostrarContacto($logueado); 
         break;
     case 'ingresar':
-        $controllerUsuario->ingresar();    //esta funcion no deberia llamarse de otra manera?? no estoy seguro igual 
+        $controllerUsuario->ingresar($logueado);
         break;
     case 'login':
         $controllerUsuario->autenticar();
         break;
+    case 'logout':
+        $controllerUsuario->logout();
+        break;
     case 'registrarse':
-        $controllerUsuario->registrarse();     
+        $controllerUsuario->registrarse($logueado);     
         break;
     case 'registrar':
         $controllerUsuario->agregarUsuario();     
