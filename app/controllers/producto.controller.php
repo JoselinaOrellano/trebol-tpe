@@ -17,8 +17,9 @@ class ProductoController {
         $this->modelMaterial = new MaterialModel();
         $this->userController = new UsuarioController();
     }
+            // tenemos funciones con el mismo nombre en view y controller
+    public function mostrarProductos(){ 
 
-    public function mostrarProductos(){
         $logueado = $this->userController->logueado();
         $productos =  $this->modelProducto->getProductos();
         $materiales = $this->modelMaterial->getMateriales();
@@ -75,11 +76,12 @@ class ProductoController {
         header('Location: ' . BASE_URL . 'inicio');
     }
 
-    public function mostrarCategoria($material){
-        $productos =  $this->modelProducto->getProductosCategoria($material);
+    public function mostrarCategoria($material){ //paso como parametro el nombre del material
         $materiales = $this->modelMaterial->getMateriales();
+        $id_material = $this->modelMaterial->getIdMaterial($material,$materiales);
+        $productos =  $this->modelProducto->getProductosCategoria($id_material);
         $logueado = $this->userController->logueado();
-        $this->viewProducto->mostrarProductos($productos, $materiales, $logueado);
+        $this->viewProducto->mostrarProductos($productos, $materiales, $material, $logueado);
     }
 
 }

@@ -23,7 +23,7 @@ switch ($params[0]) {
         $controllerProducto->mostrarProductos();
         break;
     case 'mostrarCategoria':
-        $material=$params[1];
+        $material=$params[1]; //nombre del material
         $controllerProducto ->mostrarCategoria($material);
         break;
     case 'producto':
