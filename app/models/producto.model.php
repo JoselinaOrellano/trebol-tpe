@@ -54,7 +54,7 @@ class ProductoModel{
     }
 
     public function guardarCambios($nombre, $precio, $descripcion, $imagen, $material, $id_producto){
-        $pdo = $this->crearConexion();
+        $pdo = crearConexion();
         
         $sql = 'UPDATE productos SET nombre=?, precio=?, descripcion=?, imagen=?, id_material=? WHERE id_producto=?';
 
@@ -63,7 +63,7 @@ class ProductoModel{
     }
 
     public function cargarProducto($nombre, $precio, $descripcion, $imagen, $material){
-        $pdo = $this->crearConexion();
+        $pdo = crearConexion();
         
         $sql = 'INSERT INTO productos SET nombre=?, precio=?, descripcion=?, imagen=?, id_material=? ';
 
