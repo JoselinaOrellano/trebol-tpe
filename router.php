@@ -73,6 +73,14 @@ switch ($params[0]) {
     case 'modificarMateriales':
         $controllerMateriales->modificarMateriales();
         break;
+    case 'editarMaterial':
+        $id_material=$params[1];
+        $controllerMateriales->editarMaterial($id_material);
+        break;
+    case 'confirmarCambios':
+        $id_material=$params[1];
+        $controllerMateriales->confirmarCambios($id_material);
+        break;
     default:
         echo "404 not found";
         break;
