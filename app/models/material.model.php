@@ -14,6 +14,26 @@ class MaterialModel{
     
         return $materiales;
     }
+
+    public function detalleMaterial($id_material){
+        $pdo = crearConexion();
+        $sql = "SELECT * FROM materiales WHERE id_material = ?";
+        $query = $pdo->prepare($sql);
+        $query->execute([$id_material]);
+    
+        $detalleMaterial = $query->fetch(PDO::FETCH_OBJ);
+    
+        return $detalleMaterial;
+    }
+
+    public function confirmarCambios($material, $proveedor, $id_material){
+        $pdo = crearConexion();
+        
+        $sql = 'UPDATE materiales SET material=?, proveedor=? WHERE id_material=?';
+
+        $query = $pdo->prepare($sql);
+        $query->execute([$material, $proveedor, $id_material]);
+    }
 }
 
 ?>

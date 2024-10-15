@@ -22,4 +22,18 @@ class MaterialController {
         $this->view->mostrarMateriales($materiales, $logueado);
     }
 
+    public function editarMaterial($id_material){
+        $materiales =  $this->model->getMateriales();
+        $logueado = $this->userController->logueado();
+        $detalleMaterial = $this->model->detalleMaterial($id_material);
+        $this->view->editarMaterial($detalleMaterial, $materiales, $logueado);
+    }
+
+    public function confirmarCambios($id_material){
+        $material = $_POST['nombreMaterial'];
+        $proveedor = $_POST['proveedor'];
+        $this->model->confirmarCambios($material, $proveedor, $id_material);
+        header('Location: ' . BASE_URL . 'modificarMateriales'); 
+    }
+
 }

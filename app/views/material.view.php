@@ -16,5 +16,11 @@ class MaterialView {
        $this->smarty->display('verCategorias.tpl');
     }
 
+    public function editarMaterial($detalleMaterial, $materiales, $logueado){
+        $this->smarty->assign('materiales', $materiales);
+       $this->smarty->assign('logueado', $logueado);
+       $this->smarty->assign('material', $detalleMaterial);
 
+       $this->smarty->display('editarMaterial.tpl');
+    }
 }
