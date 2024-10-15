@@ -22,6 +22,10 @@
     </table>
 </section>
 
+<section>
+        <h3>Agregar un nevo material</h3>
+        <a href="agregarMaterial" type="submit" class="btn btn-success">Agregar</a>
+</section>
 
 
 {include 'footer.tpl'}

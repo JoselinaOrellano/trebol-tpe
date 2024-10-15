@@ -36,4 +36,22 @@ class MaterialController {
         header('Location: ' . BASE_URL . 'modificarMateriales'); 
     }
 
+    public function eliminarMaterial($id_material){
+        $this->model->eliminarMaterial($id_material);
+        header('Location: ' . BASE_URL . 'modificarMateriales');
+    }
+
+    public function agregarMaterial(){
+        $materiales =  $this->model->getMateriales();
+        $logueado = $this->userController->logueado();
+        $this->view->agregarMaterial($materiales, $logueado);
+    }
+
+    public function cargarMaterial (){
+        $material = $_POST['nombreMaterial'];
+        $proveedor = $_POST['proveedor'];
+
+        $this->model->cargarMaterial($material, $proveedor);
+        header('Location: ' . BASE_URL . 'modificarMateriales');
+    }
 }

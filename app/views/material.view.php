@@ -18,9 +18,15 @@ class MaterialView {
 
     public function editarMaterial($detalleMaterial, $materiales, $logueado){
         $this->smarty->assign('materiales', $materiales);
-       $this->smarty->assign('logueado', $logueado);
-       $this->smarty->assign('material', $detalleMaterial);
+        $this->smarty->assign('logueado', $logueado);
+        $this->smarty->assign('material', $detalleMaterial);
 
        $this->smarty->display('editarMaterial.tpl');
+    }
+
+    public function agregarMaterial($materiales, $logueado){
+        $this->smarty->assign('materiales', $materiales);
+        $this->smarty->assign('logueado', $logueado);
+        $this->smarty->display('formulario_agregarMaterial.tpl');
     }
 }

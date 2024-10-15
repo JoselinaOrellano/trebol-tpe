@@ -2,7 +2,7 @@
 {include 'nav.tpl'}
 
 <div class=".container-sm	">
-  <h1>MODIFICAR PRODUCTO</h1>
+  <h1>AGREGAR PRODUCTO</h1>
   <form class="row g-3" method="POST" action="cargarProducto">
     <div class="col-md-6">
       <label for="inputNombre" class="form-label">Nombre</label>

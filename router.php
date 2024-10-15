@@ -81,6 +81,16 @@ switch ($params[0]) {
         $id_material=$params[1];
         $controllerMateriales->confirmarCambios($id_material);
         break;
+    case 'eliminarMaterial':
+        $id_material=$params[1];
+        $controllerMateriales->eliminarMaterial($id_material);
+        break;
+    case 'agregarMaterial':
+        $controllerMateriales->agregarMaterial();
+        break;
+        case 'cargarMaterial':
+            $controllerMateriales->cargarMaterial();
+            break;
     default:
         echo "404 not found";
         break;

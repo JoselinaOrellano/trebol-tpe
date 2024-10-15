@@ -34,6 +34,21 @@ class MaterialModel{
         $query = $pdo->prepare($sql);
         $query->execute([$material, $proveedor, $id_material]);
     }
+
+    public function eliminarMaterial($id_material){
+        $pdo = crearConexion();
+        $sql = "DELETE FROM materiales WHERE id_material =?";
+        $query = $pdo->prepare($sql);
+        $query->execute([$id_material]);
+    }
+
+    public function cargarMaterial($material, $proveedor){
+        $pdo = crearConexion();
+        $sql = 'INSERT INTO materiales SET material =?, proveedor = ?';
+        $query = $pdo->prepare($sql);
+        $query->execute([$material, $proveedor]);
+    }
+
 }
 
 ?>
