@@ -33,11 +33,11 @@ class UsuarioController {
     }
 
     function logueado(){
-        
+        if (session_status() != 2)
+            session_start();
         if (isset($_SESSION["usuario"])){
             return true;
         }else{
-            session_start();
             return false;
         }
     }
