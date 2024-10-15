@@ -7,6 +7,7 @@
             <th>ID</th>
             <th>Material</th>
             <th>Proveedor</th>
+            <th>Acción</th> 
         </tr>
                     
         {foreach from=$materiales item=$material}
