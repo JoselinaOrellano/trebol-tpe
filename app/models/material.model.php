@@ -14,6 +14,15 @@ class MaterialModel{
     
         return $materiales;
     }
+
+    public function getIdMaterial($nombreMaterial, $materiales){
+        foreach ($materiales as $material ){
+            if ($material->material == $nombreMaterial){
+                return $material->id_material;
+            }
+        }
+
+    }
 }
 
 ?>
