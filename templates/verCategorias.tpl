@@ -5,20 +5,20 @@
     <table class="table table-striped">
         <tr>
             <th>ID</th>
-            <th>Descripcion</th>
-            <th>Terminada</th>
-            <th>Prioridad</th>
-            <th></th>
+            <th>Material</th>
+            <th>Proveedor</th>
         </tr>
                     
         {foreach from=$materiales item=$material}
             <tr>
-                <td> {$material->id} </td>
-                <td> {$material->nombre} </td>
-                <td> {$material->prioridad} </td>
+            {* tal vez el id no sea necesario mostrar???? *}
+                <td> {$material->id_material} </td> 
+                <td> {$material->material} </td>
+                <td> {$material->proveedor} </td>
                 <td>
-                    <a href="editarMaterial/{$material->id}" type="submit" class="btn btn-success">Editar</a>
-                    <a href="eliminarMaterial/{$material->id}" type="submit" class="btn btn-danger">Eliminar</a></td>
+                    <a href="editarMaterial/{$material->id_material}" type="submit" class="btn btn-success">Editar</a>
+                    <a href="eliminarMaterial/{$material->id_material}" type="submit" class="btn btn-danger">Eliminar</a>
+                </td>
             </tr>
         {/foreach}
     </table>
