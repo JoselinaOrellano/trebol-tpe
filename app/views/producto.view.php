@@ -17,10 +17,11 @@ class ProductoView {
         $this->smarty->display('inicio.tpl');
     }
 
-        public function detalleProducto($producto, $materiales, $logueado){
+        public function detalleProducto($producto, $materiales, $nombreMaterial, $logueado){
             $this->smarty->assign('logueado', $logueado);
             $this->smarty->assign('producto', $producto);
             $this->smarty->assign('materiales', $materiales);
+            $this->smarty->assign('nombreMaterial', $nombreMaterial);
             $this->smarty->display('producto.tpl');
         }
     

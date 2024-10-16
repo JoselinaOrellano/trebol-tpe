@@ -26,11 +26,12 @@ class ProductoController {
         $this->viewProducto->mostrarProductos($productos, $materiales, $logueado);
     }
 
-    public function detalleProducto($producto){
+    public function detalleProducto($id_producto){
         $logueado = $this->userController->logueado();
-        $detalle=$this->modelProducto->detalleProducto($producto);
+        $detalle=$this->modelProducto->detalleProducto($id_producto);
         $materiales = $this->modelMaterial->getMateriales();
-        $this->viewProducto->detalleProducto($detalle, $materiales, $logueado);
+        $nombreMaterial = $this->modelMaterial->getNombreMaterial($detalle->id_material, $materiales);
+        $this->viewProducto->detalleProducto($detalle, $materiales, $nombreMaterial, $logueado);
 
     }
 
