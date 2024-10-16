@@ -5,6 +5,11 @@
           <a class="navbar-brand" href="#">
             <img src="img/logo.jpg" alt="Logo" width="50" height="50">
           </a>
+          {if ($logueado)}       
+            <button class="btn btn-outline-success"><a href="logout">Cerrar sesión</a></button>          
+          {else}
+          <button class="btn btn-outline-success"><a href="ingresar">Ingresar</a></button>  
+          {/if}
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -25,24 +30,19 @@
                   </li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-disabled="true" href="contacto">Contacto</a>
-              </li>
-              
               {if ($logueado)}
                 <li class="nav-item">
                   <a class="nav-link" aria-disabled="true" href="agregarProducto">Agregar producto</a>
                 </li>
                 <li>
                   <a class="nav-link" aria-disabled="true" href="modificarMateriales">Modificar materiales</a>
-                </li>
-             </ul>        
-                <button class="btn btn-outline-success"><a href="logout">Cerrar sesión</a></button>
-
+                </li>       
+              {/if}
+              <li class="nav-item">
+                <a class="nav-link" aria-disabled="true" href="contacto">Contacto</a>
+              </li>
               
-            {else}
-              <button class="btn btn-outline-success"><a href="ingresar">Ingresar</a></button>  
-            {/if}
+              
           </div>
           
         </div>
