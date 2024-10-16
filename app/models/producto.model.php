@@ -29,7 +29,8 @@ class ProductoModel{
     
         $productos = $query->fetchAll(PDO::FETCH_OBJ);
 
-        return $productos; 
+        return $productos;
+
     }
 
     public function detalleProducto($id){

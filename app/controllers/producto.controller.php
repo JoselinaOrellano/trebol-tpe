@@ -82,7 +82,7 @@ class ProductoController {
         $id_material = $this->modelMaterial->getIdMaterial($material,$materiales);
         $productos =  $this->modelProducto->getProductosCategoria($id_material);
         $logueado = $this->userController->logueado();
-        $this->viewProducto->mostrarProductos($productos, $materiales, $material, $logueado);
+        $this->viewProducto->mostrarProductos($productos, $materiales, $logueado);
     }
 
 }
