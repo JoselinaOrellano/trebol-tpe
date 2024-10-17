@@ -77,9 +77,9 @@ class ProductoController {
         header('Location: ' . BASE_URL . 'inicio');
     }
 
-    public function mostrarCategoria($material){ //paso como parametro el nombre del material
+    public function mostrarCategoria($id_material){ //paso como parametro el nombre del material
         $materiales = $this->modelMaterial->getMateriales();
-        $id_material = $this->modelMaterial->getIdMaterial($material,$materiales);
+        $material = $this->modelMaterial->getNombreMaterial($id_material,$materiales);
         $productos =  $this->modelProducto->getProductosCategoria($id_material);
         $logueado = $this->userController->logueado();
         $this->viewProducto->mostrarCategoria($productos, $materiales, $material, $logueado);
