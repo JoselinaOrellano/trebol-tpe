@@ -1,11 +1,11 @@
 <?php
 
-require_once 'conexion_db.php';
+require_once 'model.php';
 
-class UsuariolModel{
+class UsuariolModel extends Model{
 
     public function getUsuario($nombreUsuario){
-        $pdo = crearConexion();
+        $pdo = $this->crearConexion();
 
         $sql = "select * from usuarios where nombre_usuario = ?";
         $query = $pdo->prepare($sql);
@@ -17,12 +17,12 @@ class UsuariolModel{
     }
 
     public function crearUsuario($nombre, $apellido, $email, $nombreUsuario, $password){
-        $pDO = crearConexion();
+        $pdo = $this->crearConexion();
         
         $sql = 'INSERT INTO usuarios (nombre, apellido, email, nombre_usuario, password) 
                 VALUES (?, ?, ?, ?, ?)';
 
-        $query = $pDO->prepare($sql);
+        $query = $pdo->prepare($sql);
         try {
             $query->execute([$nombre, $apellido, $email, $nombreUsuario, $password]);
         } catch (\Throwable $th) {

@@ -1,12 +1,12 @@
 <?php
 
-require_once 'conexion_db.php';
+require_once ('model.php');
 
-class ProductoModel{
+class ProductoModel extends Model{
     //conexion a la db
 
     public function getProductos(){
-        $pdo = crearConexion();
+        $pdo = $this->crearConexion();
 
         $sql = "SELECT a.*, b.*
                 FROM productos a
@@ -21,8 +21,7 @@ class ProductoModel{
     }
 
     public function getProductosCategoria($id_material){
-        $pdo = crearConexion();
-
+        $pdo = $this->crearConexion();
         $sql = "select * from productos where id_material = ?";
         $query = $pdo->prepare($sql);
         $query->execute([$id_material]);
@@ -35,7 +34,7 @@ class ProductoModel{
 
     public function detalleProducto($id){
         
-        $pdo = crearConexion();
+        $pdo = $this->crearConexion();
 
         $sql = "select * from productos  where id_producto = ?";
         $query = $pdo->prepare($sql);
@@ -48,14 +47,14 @@ class ProductoModel{
     }
 
     public function eliminarProducto($producto){
-        $pdo = crearConexion();
+        $pdo = $this->crearConexion();
         $sql = "DELETE FROM productos WHERE id_producto =?";
         $query = $pdo->prepare($sql);
         $query->execute([$producto]);
     }
 
     public function guardarCambios($nombre, $precio, $descripcion, $imagen, $material, $id_producto){
-        $pdo = crearConexion();
+        $pdo = $this->crearConexion();
         
         $sql = 'UPDATE productos SET nombre=?, precio=?, descripcion=?, imagen=?, id_material=? WHERE id_producto=?';
 
@@ -64,7 +63,7 @@ class ProductoModel{
     }
 
     public function cargarProducto($nombre, $precio, $descripcion, $imagen, $material){
-        $pdo = crearConexion();
+        $pdo = $this->crearConexion();
         
         $sql = 'INSERT INTO productos SET nombre=?, precio=?, descripcion=?, imagen=?, id_material=? ';
 

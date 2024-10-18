@@ -1,11 +1,11 @@
 <?php
 
-require_once 'conexion_db.php';
+require_once 'model.php';
 
-class MaterialModel{
+class MaterialModel extends Model{
 
     public function getMateriales(){
-        $pdo = crearConexion();
+        $pdo = $this->crearConexion();
         $sql = "select * from materiales";
         $query = $pdo->prepare($sql);
         $query->execute();
@@ -16,7 +16,7 @@ class MaterialModel{
     }
 
     public function detalleMaterial($id_material){
-        $pdo = crearConexion();
+        $pdo = $this->crearConexion();
         $sql = "SELECT * FROM materiales WHERE id_material = ?";
         $query = $pdo->prepare($sql);
         $query->execute([$id_material]);
@@ -27,7 +27,7 @@ class MaterialModel{
     }
 
     public function confirmarCambios($material, $proveedor, $id_material){
-        $pdo = crearConexion();
+        $pdo = $this->crearConexion();
         
         $sql = 'UPDATE materiales SET material=?, proveedor=? WHERE id_material=?';
 
@@ -36,14 +36,14 @@ class MaterialModel{
     }
 
     public function eliminarMaterial($id_material){
-        $pdo = crearConexion();
+        $pdo = $this->crearConexion();
         $sql = "DELETE FROM materiales WHERE id_material =?";
         $query = $pdo->prepare($sql);
         $query->execute([$id_material]);
     }
 
     public function cargarMaterial($material, $proveedor){
-        $pdo = crearConexion();
+        $pdo = $this->crearConexion();
         $sql = 'INSERT INTO materiales SET material =?, proveedor = ?';
         $query = $pdo->prepare($sql);
         $query->execute([$material, $proveedor]);
