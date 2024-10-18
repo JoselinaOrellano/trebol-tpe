@@ -2,7 +2,7 @@
 {include 'nav.tpl'}
 
 
-<div>
+<div class="mx-auto">
   <div class="card" style="width: 18rem;">
     <img src="{$producto->imagen}" class="card-img-top" alt="...">
     <div class="card-body">

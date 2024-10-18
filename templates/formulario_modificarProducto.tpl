@@ -22,6 +22,7 @@
     <div class="mb-3">
       <label for="formFile" class="form-label">Imagen</label>
       <input name="imagenProducto" class="form-control col-12" type="file" id="imagenProducto" value="{$producto->imagen}">
+      <p>La imagen debe tener extension .jpg</p>
     </div>
 
     <div class="col-md-4 mb-3">

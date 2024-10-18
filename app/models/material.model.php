@@ -40,6 +40,7 @@ class MaterialModel extends Model{
         $sql = "DELETE FROM materiales WHERE id_material =?";
         $query = $pdo->prepare($sql);
         $query->execute([$id_material]);
+        return true;
     }
 
     public function cargarMaterial($material, $proveedor){

@@ -37,8 +37,17 @@ class MaterialController {
     }
 
     public function eliminarMaterial($id_material){
-        $this->model->eliminarMaterial($id_material);
-        header('Location: ' . BASE_URL . 'modificarMateriales');
+        $eliminado = $this->model->eliminarMaterial($id_material);
+
+        if($eliminado){
+            header('Location: ' . BASE_URL . 'modificarMateriales');
+        }
+        else{
+            $materiales =  $this->model->getMateriales();
+            $logueado = $this->userController->logueado();
+            $this->view->mostrarMateriales($materiales, $logueado, "No se pudo eliminar");
+        }
+        
     }
 
     public function agregarMaterial(){

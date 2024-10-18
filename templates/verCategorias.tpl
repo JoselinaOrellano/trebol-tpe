@@ -2,6 +2,11 @@
 {include 'nav.tpl'}
 
 <section>
+
+
+{if {$error}}
+    <p>{$error}</p>
+{/if}
     <table class="table .table-sm  table-striped  table-hover table-bordered border-success">
            
             <th  >Material</th>

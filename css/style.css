@@ -5,6 +5,7 @@ a{
 
 i{
     color:black;
+    margin-bottom: 20px !important;
 }
     
 
@@ -27,10 +28,7 @@ a:hover{
 .contenedor{
     margin: 50px;
     height: 100vh;
-    color:green;
-   /*background-image: url(../img/fondo.jpg);
-    background-repeat: no-repeat;*/
-
+    
 }
 
 
