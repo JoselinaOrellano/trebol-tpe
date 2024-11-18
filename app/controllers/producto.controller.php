@@ -17,14 +17,21 @@ class ProductoController {
         $this->modelMaterial = new MaterialModel();
         $this->userController = new UsuarioController();
     }
-            // tenemos funciones con el mismo nombre en view y controller
+            
     public function mostrarProductos(){ 
-
         $logueado = $this->userController->logueado();
         $productos =  $this->modelProducto->getProductos();
         $materiales = $this->modelMaterial->getMateriales();
         $this->viewProducto->mostrarProductos($productos, $materiales, $logueado);
     }
+
+    public function mostrarCategoria($id_material){ //paso como parametro el nombre del material
+        $materiales = $this->modelMaterial->getMateriales();
+        $productos =  $this->modelProducto->getProductosCategoria($id_material);
+        $logueado = $this->userController->logueado();
+        $this->viewProducto->mostrarProductos($productos, $materiales, $logueado);
+    }
+
 
     public function detalleProducto($id_producto){
         $logueado = $this->userController->logueado();
@@ -75,14 +82,6 @@ class ProductoController {
 
         $this->modelProducto->cargarProducto($nombre, $precio, $descripcion, $imagen, $material);
         header('Location: ' . BASE_URL . 'inicio');
-    }
-
-    public function mostrarCategoria($id_material){ //paso como parametro el nombre del material
-        $materiales = $this->modelMaterial->getMateriales();
-        $material = $this->modelMaterial->getNombreMaterial($id_material,$materiales);
-        $productos =  $this->modelProducto->getProductosCategoria($id_material);
-        $logueado = $this->userController->logueado();
-        $this->viewProducto->mostrarCategoria($productos, $materiales, $material, $logueado);
     }
 
 }
