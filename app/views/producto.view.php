@@ -37,12 +37,7 @@ class ProductoView {
         $this->smarty->assign('logueado', $logueado);
         $this->smarty->display('formulario_agregarProducto.tpl');
     }
-    public function mostrarCategoria($productos, $materiales, $material, $logueado){
-        $this->smarty->assign('logueado', $logueado);
-        $this->smarty->assign('productos', $productos);
-        $this->smarty->assign('materiales', $materiales);
-        $this->smarty->assign('material', $material);
-        $this->smarty->display('categoria.tpl');    
-    }
+
 }
+
 ?>

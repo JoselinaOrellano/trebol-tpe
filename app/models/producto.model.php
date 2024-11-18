@@ -22,7 +22,11 @@ class ProductoModel extends Model{
 
     public function getProductosCategoria($id_material){
         $pdo = $this->crearConexion();
-        $sql = "select * from productos where id_material = ?";
+        $sql = "SELECT a.*, b.*
+                FROM productos a
+                INNER JOIN materiales b
+                ON a.id_material = b.id_material
+                WHERE b.id_material = ? "; //"select * from productos where id_material = ?"
         $query = $pdo->prepare($sql);
         $query->execute([$id_material]);
     
