@@ -32,4 +32,16 @@ class MaterialView {
         $this->smarty->assign('logueado', $logueado);
         $this->smarty->display('formulario_agregarMaterial.tpl');
     }
+
+    public function eliminarMaterial($id_material){
+        $pdo = $this->crearConexion();
+        $sql = "DELETE FROM materiales WHERE id_material =?";
+        $query = $pdo->prepare($sql);
+        try {
+            $query->execute([$id_material]);
+            return true;
+        } catch (\Throwable $th) {
+            return false;
+        }
+    }
 }
