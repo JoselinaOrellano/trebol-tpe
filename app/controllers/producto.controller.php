@@ -48,23 +48,33 @@ class ProductoController {
 
     }
 
-    public function modificarProducto($id_producto){
+    public function modificarProducto($id_producto, $error = null){
         $logueado = $this->userController->logueado();
         $materiales = $this->modelMaterial->getMateriales();
         $producto=$this->modelProducto->detalleProducto($id_producto);
-        $this->viewProducto->modificarProducto($producto, $materiales, $logueado);
+        $this->viewProducto->modificarProducto($producto, $materiales, $logueado, $error);
     }
 
     public function guardarCambios($id_producto){
-        $nombre = $_POST['nombreProducto'];
-        $precio = $_POST['precioProducto'];
-        $descripcion = $_POST['descripcionProducto'];
-        $imagen = "img/". $_POST['imagenProducto'];
-        $material = $_POST['materialProducto'];
+        if(!isset($_POST['nombreProducto']) || empty($_POST['nombreProducto']) 
+            || !isset($_POST['precioProducto']) || empty($_POST['precioProducto'])
+            || !isset($_POST['descripcionProducto']) || empty($_POST['descripcionProducto'])
+            || !isset($_POST['imagenProducto']) || empty($_POST['imagenProducto'])){
+                $this->modificarProducto($id_producto, "Faltan campos por completar");
+        }
+        else {
+            $nombre = $_POST['nombreProducto'];
+            $precio = $_POST['precioProducto'];
+            $descripcion = $_POST['descripcionProducto'];
+            $imagen = "img/". $_POST['imagenProducto'];
+            $material = $_POST['materialProducto'];
+    
+    
+            $this->modelProducto->guardarCambios($nombre, $precio, $descripcion, $imagen, $material, $id_producto);
+            header('Location: ' . BASE_URL . 'inicio');
+        }
 
-
-        $this->modelProducto->guardarCambios($nombre, $precio, $descripcion, $imagen, $material, $id_producto);
-        header('Location: ' . BASE_URL . 'inicio'); 
+        
     }
 
     public function agregarProducto(){
@@ -74,14 +84,27 @@ class ProductoController {
     }
 
     public function cargarProducto(){
-        $nombre = $_POST['nombreProducto'];
-        $precio = $_POST['precioProducto'];
-        $descripcion = $_POST['descripcionProducto'];
-        $imagen = "img/". $_POST['imagenProducto'];
-        $material = $_POST['materialProducto'];
+        $logueado = $this->userController->logueado();
+        $materiales = $this->modelMaterial->getMateriales();
 
-        $this->modelProducto->cargarProducto($nombre, $precio, $descripcion, $imagen, $material);
-        header('Location: ' . BASE_URL . 'inicio');
+        if(!isset($_POST['nombreProducto']) || empty($_POST['nombreProducto']) 
+        || !isset($_POST['precioProducto']) || empty($_POST['precioProducto'])
+        || !isset($_POST['descripcionProducto']) || empty($_POST['descripcionProducto'])
+        || !isset($_POST['imagenProducto']) || empty($_POST['imagenProducto'])){
+            $error = "faltan completar campos";
+            $this->viewProducto->agregarProducto($materiales, $logueado, $error);
+        }
+        else{
+            $nombre = $_POST['nombreProducto'];
+            $precio = $_POST['precioProducto'];
+            $descripcion = $_POST['descripcionProducto'];
+            $imagen = "img/". $_POST['imagenProducto'];
+            $material = $_POST['materialProducto'];
+
+            $this->modelProducto->cargarProducto($nombre, $precio, $descripcion, $imagen, $material);
+            header('Location: ' . BASE_URL . 'inicio');
+        }
+        
     }
 
 }

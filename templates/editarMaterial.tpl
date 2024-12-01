@@ -3,6 +3,13 @@
 
 <div class=".container-sm	">
     <h1>MODIFICAR MATERIALES</h1>
+
+    {if ({$error})}
+        <div class="alert alert-danger" role="alert">
+          {$error}
+       </div>
+    {/if}
+
     <form class="row g-3" method="POST" action="confirmarCambios/{$material->id_material}">
         <div class="col-md-6">
             <label for="inputNombre" class="form-label">Material</label>

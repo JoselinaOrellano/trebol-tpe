@@ -25,14 +25,16 @@ class ProductoView {
         $this->smarty->display('producto.tpl');
     }
     
-    public function modificarProducto($producto, $materiales, $logueado){
+    public function modificarProducto($producto, $materiales, $logueado, $error){
+        $this->smarty->assign('error', $error);
         $this->smarty->assign('logueado', $logueado);
         $this->smarty->assign('producto', $producto);
         $this->smarty->assign('materiales', $materiales);
         $this->smarty->display('formulario_modificarProducto.tpl');
     }
 
-    public function agregarProducto($materiales, $logueado){
+    public function agregarProducto($materiales, $logueado, $error = null){
+        $this->smarty->assign('error', $error);
         $this->smarty->assign('materiales', $materiales);
         $this->smarty->assign('logueado', $logueado);
         $this->smarty->display('formulario_agregarProducto.tpl');

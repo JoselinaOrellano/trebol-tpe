@@ -22,18 +22,28 @@ class MaterialController {
         $this->view->mostrarMateriales($materiales, $logueado);
     }
 
-    public function editarMaterial($id_material){
+    public function editarMaterial($id_material, $error = null){
         $materiales =  $this->model->getMateriales();
         $logueado = $this->userController->logueado();
         $detalleMaterial = $this->model->detalleMaterial($id_material);
-        $this->view->editarMaterial($detalleMaterial, $materiales, $logueado);
+        $this->view->editarMaterial($detalleMaterial, $materiales, $logueado, $error);
     }
 
     public function confirmarCambios($id_material){
-        $material = $_POST['nombreMaterial'];
-        $proveedor = $_POST['proveedor'];
-        $this->model->confirmarCambios($material, $proveedor, $id_material);
-        header('Location: ' . BASE_URL . 'modificarMateriales'); 
+        if(!isset($_POST['nombreMaterial']) || empty($_POST['nombreMaterial'])
+        || !isset($_POST['proveedor']) || empty($_POST['proveedor'])){
+            $error = "Faltan completar campos";
+            $this->editarMaterial($id_material, $error);
+        }
+
+        else{
+           $material = $_POST['nombreMaterial'];
+            $proveedor = $_POST['proveedor'];
+            $this->model->confirmarCambios($material, $proveedor, $id_material);
+            header('Location: ' . BASE_URL . 'modificarMateriales');  
+        }
+            
+        
     }
 
     public function eliminarMaterial($id_material){
@@ -57,10 +67,21 @@ class MaterialController {
     }
 
     public function cargarMaterial (){
-        $material = $_POST['nombreMaterial'];
-        $proveedor = $_POST['proveedor'];
+        $materiales =  $this->model->getMateriales();
+        $logueado = $this->userController->logueado();
+        
+        if(!isset($_POST['nombreMaterial']) || empty($_POST['nombreMaterial'])
+        || !isset($_POST['proveedor']) || empty($_POST['proveedor'])){
+            $error = "faltan completar campos";
+            $this->view->agregarMaterial($materiales, $logueado, $error);
+        }
+        else{
+            $material = $_POST['nombreMaterial'];
+            $proveedor = $_POST['proveedor'];
 
-        $this->model->cargarMaterial($material, $proveedor);
-        header('Location: ' . BASE_URL . 'modificarMateriales');
+            $this->model->cargarMaterial($material, $proveedor);
+            header('Location: ' . BASE_URL . 'modificarMateriales');   
+        }
+        
     }
 }

@@ -3,6 +3,13 @@
 
 <div class=".container-sm	">
   <h1>AGREGAR PRODUCTO</h1>
+
+  {if ({$error})}
+    <div class="alert alert-danger" role="alert">
+      {$error}
+    </div>
+  {/if}
+
   <form class="row g-3" method="POST" action="cargarProducto">
     <div class="col-md-6">
       <label for="inputNombre" class="form-label">Nombre</label>

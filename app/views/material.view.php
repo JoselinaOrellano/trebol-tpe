@@ -17,7 +17,8 @@ class MaterialView {
        $this->smarty->display('verCategorias.tpl');
     }
 
-    public function editarMaterial($detalleMaterial, $materiales, $logueado){
+    public function editarMaterial($detalleMaterial, $materiales, $logueado, $error){
+        $this->smarty->assign('error', $error);
         $this->smarty->assign('materiales', $materiales);
         $this->smarty->assign('logueado', $logueado);
         $this->smarty->assign('material', $detalleMaterial);
@@ -25,7 +26,8 @@ class MaterialView {
        $this->smarty->display('editarMaterial.tpl');
     }
 
-    public function agregarMaterial($materiales, $logueado){
+    public function agregarMaterial($materiales, $logueado,$error = null){
+        $this->smarty->assign('error', $error);
         $this->smarty->assign('materiales', $materiales);
         $this->smarty->assign('logueado', $logueado);
         $this->smarty->display('formulario_agregarMaterial.tpl');
